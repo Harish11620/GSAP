@@ -80,8 +80,8 @@ gsap.to(".p5 h1", {
     },
 })
 
-var initialPath = `M 10 150 Q 500 150 990 150`; // Initial path
-var finalPath = initialPath; // Ensure finalPath matches the initial path
+var initialPath = `M 10 150 Q 500 150 990 150`;
+var finalPath = initialPath;
 
 var string = document.querySelector(".string");
 
@@ -96,9 +96,9 @@ string.addEventListener("mousemove", function (dets) {
 
 string.addEventListener("mouseleave", function () {
     gsap.to("svg path", {
-        attr: { d: finalPath }, // Reset to the finalPath
+        attr: { d: finalPath },
         duration: 0.8,
-        ease: Elastic.easeOut.config(1, 0.2), // Correct easing function
+        ease: Elastic.easeOut.config(1, 0.2), 
     });
 });
 
