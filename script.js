@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".p1 h1", {
+gsap.from(".p1 .intro", {
     opacity: 0,
     y: 50,
     duration: 2,
@@ -23,12 +23,24 @@ gsap.from(".p2 h1", {
         scrub: 2,
     },
 })
-gsap.from(".p2 h2", {
+gsap.from(".p2 p", {
     opacity: 0,
     y: 50,
     duration: 2,
     scrollTrigger: {
         trigger: ".p2 h1",
+        start: "top 80%",
+        scroller: "body",
+        scrub: 2,
+    },
+})
+
+gsap.from(".p3 h1", {
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    scrollTrigger: {
+        trigger: ".p3 h1",
         start: "top 80%",
         scroller: "body",
         scrub: 2,
@@ -47,7 +59,6 @@ gsap.from(".p3 .box", {
 })
 
 gsap.to(".p3 .box", {
-    backgroundcolor: "#2563eb",
     scrollTrigger: {
         trigger: ".p3 .box",
         start: "top 80%",
@@ -56,12 +67,23 @@ gsap.to(".p3 .box", {
     },
 })
 
-
 gsap.to(".p4 .b", {
     x: -500,
     borderRadius: "50%",
     scrollTrigger: {
         trigger: ".p4 .b",
+        start: "top 100%",
+        scroller: "body",
+        scrub: 2,
+    },
+})
+
+gsap.from(".p4 h1", {
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    scrollTrigger: {
+        trigger: ".p4 h1",
         start: "top 100%",
         scroller: "body",
         scrub: 2,
@@ -80,8 +102,32 @@ gsap.to(".p5 h1", {
     },
 })
 
-var initialPath = `M 10 150 Q 500 150 990 150`;
-var finalPath = initialPath;
+gsap.from(".p6 h1", {
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    scrollTrigger: {
+        trigger: ".p6 h1",
+        start: "top 100%",
+        scroller: "body",
+        scrub: 2,
+    },
+})
+
+gsap.from(".p6 p", {
+    opacity: 0,
+    y: 50,
+    duration: 2,
+    scrollTrigger: {
+        trigger: ".p6 p",
+        start: "top 100%",
+        scroller: "body",
+        scrub: 2,
+    },
+})
+
+var initialPath = `M 10 150 Q 500 150 990 150`; // Initial path
+var finalPath = initialPath; // Ensure finalPath matches the initial path
 
 var string = document.querySelector(".string");
 
@@ -96,9 +142,9 @@ string.addEventListener("mousemove", function (dets) {
 
 string.addEventListener("mouseleave", function () {
     gsap.to("svg path", {
-        attr: { d: finalPath },
+        attr: { d: finalPath }, // Reset to the finalPath
         duration: 0.8,
-        ease: Elastic.easeOut.config(1, 0.2), 
+        ease: Elastic.easeOut.config(1, 0.2), // Correct easing function
     });
 });
 
@@ -130,8 +176,9 @@ image.addEventListener("mouseleave",function(){
     })
 })
 
-var menu = document.querySelector(".nav i");
-var cross = document.querySelector(".full i");
+var menu = document.getElementById("menu-icon");
+var cross = document.getElementById("close-icon");
+
 
 var tl = gsap.timeline();
 
@@ -139,6 +186,7 @@ tl.to(".full",{
     right:0,
     duration:0.4,
     ease:Power3.easeOut,
+    zIndex:10,
 })
 
 tl.from(".full h4",{
@@ -159,4 +207,28 @@ menu.addEventListener("click",function(){
 })
 cross.addEventListener("click",function(){
     tl.reverse();
+})
+
+window.addEventListener("wheel",function(dets){
+    if(dets.deltaY>0){
+        gsap.to(".marque",{
+            transform:"translateX(-200%)",
+            duration:5,
+            repeat:-1,
+            ease:"none"
+        })
+        gsap.to(".marque i",{
+            rotate:180
+        })
+    } else{
+        gsap.to(".marque",{
+            transform:"translateX(100%)",
+            duration:5,
+            repeat:-1,
+            ease:"none"
+        })
+        gsap.to(".marque i",{
+            rotate:0
+        })
+    }
 })
