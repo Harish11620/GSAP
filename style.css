@@ -322,3 +322,8 @@ h1, h2, h4 {
     transform: scale(1.2);
     color: #D9FF06;
 }
+
+.footer-content a{
+    color: white;
+    text-decoration: none;
+}
