@@ -332,3 +332,112 @@ h1, h2, h4 {
     color: white;
     text-decoration: none;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .intro p, .p2 p, .p6 p {
+    width: 85%;
+    font-size: 18px;
+  }
+
+  .marque h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    width: auto;
+    margin-right: 20px;
+    gap: 15px;
+  }
+
+  .nav h2 {
+    font-size: 20px;
+  }
+
+  .nav i {
+    font-size: 24px;
+  }
+
+  .intro h1 {
+    font-size: 28px;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .intro p {
+    width: 90%;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .intro button {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .full {
+    width: 60%;
+    padding: 100px 30px;
+  }
+
+  .full h4 {
+    font-size: 30px;
+  }
+
+  .p3 .box, .p4 .b {
+    height: 200px;
+    width: 200px;
+  }
+
+  .p5 h1 {
+    font-size: 15vw;
+    transform: none;
+  }
+
+  .marque h1 {
+    font-size: 28px;
+  }
+
+  .footer-content {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 22px;
+  }
+
+  .intro p {
+    font-size: 14px;
+  }
+
+  .full {
+    width: 80%;
+    padding: 80px 20px;
+  }
+
+  .full h4 {
+    font-size: 24px;
+  }
+
+  .p6 p {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  .marque h1 {
+    font-size: 20px;
+  }
+
+  .footer-content p {
+    font-size: 12px;
+  }
+
+  .footer .socials i {
+    font-size: 20px;
+  }
+}
+
