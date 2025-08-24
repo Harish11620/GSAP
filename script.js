@@ -232,3 +232,8 @@ window.addEventListener("wheel",function(dets){
         })
     }
 })
+
+// Disable cursor effect on touch devices
+if (window.innerWidth < 768) {
+  document.querySelector(".cursor").style.display = "none";
+}
